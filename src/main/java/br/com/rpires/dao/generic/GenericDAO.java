@@ -180,20 +180,28 @@ public abstract class GenericDAO<T extends Persistente, E extends Serializable> 
 								ResultSet rs, String fieldName)
 			throws IllegalAccessException, InvocationTargetException, SQLException, TipoElementoNaoConhecidoException {
 
-		if (classField.equals(Integer.class)) {
+		if (classField.equals(Integer.class) || classField.equals(int.class)) {
 			method.invoke(entity, rs.getInt(fieldName));
-		} else if (classField.equals(Long.class)) {
+
+		} else if (classField.equals(Long.class) || classField.equals(long.class)) {
 			method.invoke(entity, rs.getLong(fieldName));
-		} else if (classField.equals(Double.class)) {
+
+		} else if (classField.equals(Double.class) || classField.equals(double.class)) {
 			method.invoke(entity, rs.getDouble(fieldName));
-		} else if (classField.equals(Short.class)) {
+
+		} else if (classField.equals(Short.class) || classField.equals(short.class)) {
 			method.invoke(entity, rs.getShort(fieldName));
+
 		} else if (classField.equals(BigDecimal.class)) {
 			method.invoke(entity, rs.getBigDecimal(fieldName));
+
 		} else if (classField.equals(String.class)) {
 			method.invoke(entity, rs.getString(fieldName));
+
 		} else {
-			throw new TipoElementoNaoConhecidoException("TIPO DE CLASSE NÃO CONHECIDO: " + classField);
+			throw new TipoElementoNaoConhecidoException(
+					"TIPO DE CLASSE NÃO CONHECIDO: " + classField.getName()
+			);
 		}
 	}
 

@@ -54,6 +54,7 @@ public class ClienteDaoTest {
         cliente.setEstado("SP");
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
+        cliente.setEmail("email@testcliente.com");
         clienteDao.cadastrar(cliente);
 
         Cliente clienteConsultado = clienteDao.consultar(cliente.getCpf());
@@ -72,6 +73,7 @@ public class ClienteDaoTest {
         cliente.setEstado("SP");
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
+        cliente.setEmail("email@testcliente.com");
         Boolean retorno = clienteDao.cadastrar(cliente);
         Assert.assertTrue(retorno);
 
@@ -92,6 +94,7 @@ public class ClienteDaoTest {
         cliente.setEstado("SP");
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
+        cliente.setEmail("email@testcliente.com");
         Boolean retorno = clienteDao.cadastrar(cliente);
         Assert.assertTrue(retorno);
 
@@ -113,6 +116,7 @@ public class ClienteDaoTest {
         cliente.setEstado("SP");
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
+        cliente.setEmail("email@testcliente.com");
         Boolean retorno = clienteDao.cadastrar(cliente);
         Assert.assertTrue(retorno);
 
@@ -141,6 +145,7 @@ public class ClienteDaoTest {
         cliente.setEstado("SP");
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
+        cliente.setEmail("email@testcliente.com");
         Boolean retorno = clienteDao.cadastrar(cliente);
         Assert.assertTrue(retorno);
 
@@ -152,6 +157,7 @@ public class ClienteDaoTest {
         cliente1.setEstado("SP");
         cliente1.setNumero(10);
         cliente1.setTel(1199999999L);
+        cliente.setEmail("email@testcliente.com");
         Boolean retorno1 = clienteDao.cadastrar(cliente1);
         Assert.assertTrue(retorno1);
 

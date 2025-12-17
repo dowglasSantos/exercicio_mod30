@@ -26,6 +26,9 @@ public class Produto implements Persistente {
 	@ColunaTabela(dbName = "valor", setJavaName = "setValor")
 	private BigDecimal valor;
 
+	@ColunaTabela(dbName = "raridade", setJavaName = "setRaridade")
+	private String raridade;
+
 	public String getCodigo() {
 		return codigo;
 	}
@@ -65,5 +68,12 @@ public class Produto implements Persistente {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
+	public void setRaridade(String raridade) {
+		this.raridade = raridade;
+	}
+
+	public String getRaridade() {
+		return raridade;
+	}
 }
